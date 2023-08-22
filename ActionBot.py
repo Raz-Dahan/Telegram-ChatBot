@@ -17,8 +17,11 @@ def status(update: Update, context: CallbackContext):
         headers={"Authorization": f"Bearer {GITHUB_TOKEN}"}
     )
     runs = response.json()["workflow_runs"]
-    latest_run_status = runs[0]["conclusion"]
-    update.message.reply_text(f"Last run status: {latest_run_status}")
+    latest_run = runs[0]
+    latest_run_number = latest_run["run_number"]
+    latest_run_status = latest_run["conclusion"]
+    latest_run_name = latest_run["display_title"]
+    update.message.reply_text(f"Last run #{latest_run_number} - {latest_run_name} status: {latest_run_status}")
 
 def main(request):
     updater = Updater(token=TELEGRAM_TOKEN, use_context=True)
