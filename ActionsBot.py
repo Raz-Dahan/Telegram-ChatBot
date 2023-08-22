@@ -10,7 +10,7 @@ REPO_NAME = "NASA-gha-pipeline"
 WORKFLOW="workflow.yaml"
 
 def start(update: Update, context: CallbackContext):
-    update.message.reply_text("Welcome to the GitHub Bot! Use /status to get workflow status.")
+    update.message.reply_text("Welcome to the GitHub Bot!\nUse /status to get workflow status.\nUse /run to run the workflow.")
 
 def status(update: Update, context: CallbackContext):
     response = requests.get(
@@ -22,7 +22,7 @@ def status(update: Update, context: CallbackContext):
     latest_run_number = latest_run["run_number"]
     latest_run_status = latest_run["conclusion"]
     latest_run_name = latest_run["display_title"]
-    update.message.reply_text(f"Last run #{latest_run_number} - {latest_run_name} status: {latest_run_status}")
+    update.message.reply_text(f"The last run was #{latest_run_number} named '{latest_run_name}' ended with {latest_run_status}")
 
 def run(update: Update, context: CallbackContext):
     response = requests.post(
