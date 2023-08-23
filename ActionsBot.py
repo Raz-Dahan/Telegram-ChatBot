@@ -22,7 +22,7 @@ def status(update: Update, context: CallbackContext):
     latest_run = runs[0]
     latest_run_number = latest_run["run_number"]
     latest_run_status = latest_run["conclusion"]
-    latest_run_name = latest_run["name"]
+    latest_run_name = latest_run["display_title"]
     update.message.reply_text(f"The last run was #{latest_run_number} named '{latest_run_name}' ended with {latest_run_status}")
 
 def details(update: Update, context: CallbackContext):
