@@ -16,4 +16,5 @@ Before using this bot, make sure you have the following:
 1. Start a chat with your Telegram bot and use the following commands:
    - `/start`: Get welcome message and usage instructions.
    - `/status`: Check the status of the latest workflow run.
+   - `/details`: Gives more information on the latest run.
    - `/run`: Trigger the workflow.
