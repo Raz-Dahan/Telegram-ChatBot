@@ -7,8 +7,8 @@ This is a Serverless Telegram bot that interacts with GitHub's API. The bot allo
 Before using this bot, make sure you have the following:
 
 - Python environment with required packages (`telegram`, `requests`).
-- Telegram Bot Token (`TELEGRAM_TOKEN`) obtained by creating a bot on Telegram.
-- GitHub Personal Access Token (`GITHUB_TOKEN`) with appropriate repository access.
+- Telegram Bot Token (`TELEGRAM_TOKEN`) obtained by creating a bot on Telegram's @botfather.
+- GitHub Personal Access Token (`GITHUB_TOKEN`) with `repo` scope access.
 - GitHub repository details: owner, repository name, and workflow filename.
 
 ## Usage
